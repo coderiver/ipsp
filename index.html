@@ -6,17 +6,180 @@
 	<title>Template</title>
 	<meta name="viewport" content="initial-scale=1"/>
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,700,900,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 	<script src="js/jquery.js"></script>
 	<script src="js/common.js"></script>
 </head>
 <body>
-
-<!-- BEGIN  out-->
-<div class="out">
-
+<!-- BEGIN .header -->
+<header class="header">
+	<div class="heder__row">
+		<a class="logo__left" href="#">Merchant<span>logo</span></a>
+		<a class="logo__right" href="#"><i></i></a>
+	</div>
+</header>
+<!-- END .header -->
+<!-- BEGIN .container -->
+<div class="container">
+	<div class="payment-info">
+		<h3 class="h3">Информация об оплате</h3>
+		<div class="payment-info__left payment-info__left_top">
+			<div class="payment-info__field">
+				<div class="payment-info__row">Сайт</div>
+				<span>overkings.ru</span>
+			</div>
+			<div class="payment-info__field">
+				<div class="payment-info__row">Номер платежа</div>
+				<span>45329</span>
+			</div>
+			<div class="payment-info__field">
+				<div class="payment-info__row">Сумма</div>
+				<span class="text_blue">450$</span>
+			</div>
+		</div>
+		<div class="payment-info__right">
+			<h4 class="h4">До окончания сессии осталось</h4>
+			<p class="text_blue clock">13 минут 20 секунд</p>
+		</div>
+	</div>
+	<div class="payment__field">
+		<div class="payment__input">
+			<h5 class="h5">Номер карты</h5>
+			<div class="input__field">
+				<input class="input" type="text"></input>	
+			</div>
+			<div class="payment__select">
+				<div class="payment__left">
+					<h5 class="h5">Срок действия</h5>
+					<div class="input__field">
+						<div class="select js-select">
+							<span class="select__text js-select-text">02</span>
+							<input class="js-select-input" type="hidden" value="">
+							<ul class="select__list js-select-list">
+								<li data-id="0">01</li>
+								<li data-id="1">02</li>
+								<li data-id="2">03</li>
+								<li data-id="3">04</li>
+								<li data-id="4">05</li>
+								<li data-id="5">06</li>
+								<li data-id="6">07</li>
+								<li data-id="7">08</li>
+								<li data-id="8">09</li>
+								<li data-id="9">10</li>
+								<li data-id="10">11</li>
+								<li data-id="11">12</li>
+							</ul>
+						</div>
+					</div>
+					<div class="input__field">
+						<div class="select js-select">
+							<span class="select__text js-select-text">14</span>
+							<input class="js-select-input" type="hidden" value="13">
+							<ul class="select__list js-select-list">
+								<li data-id="0">14</li>
+								<li data-id="1">15</li>
+								<li data-id="2">16</li>
+								<li data-id="3">17</li>
+								<li data-id="4">18</li>
+								<li data-id="5">19</li>
+								<li data-id="6">20</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="payment__right">
+					<h5 class="h5">Код CVV2/CVC2</h5>
+					<div class="input__code">
+						<input class="input" type="text"></input>	
+					</div>
+				</div>
+			</div>
+			<h5 class="h5">Владелец карты</h5>
+			<div class="input__field">
+				<input class="input" type="text"></input>	
+			</div>
+			<h5 class="h5 input__field_text">Латинскими буквами как указано на карте</h5>
+		</div>
+		<div class="option-paying">
+			<a class="option__item" href="#"><i class="visa"></i></a>
+			<a class="option__item" href="#"><i class="mc"></i></a>
+			<a class="option__item" href="#"><i class="vbv"></i></a>
+			<a class="option__item" href="#"><i class="mcsc"></i></a>
+			<a class="option__item" href="#"><i class="pci"></i></a>
+		</div>
+	</div>
+	<div class="payment-info payment-info__bot">
+		<div class="payment-info__left">
+			<h3 class="h3">Платежная информация</h3>
+			<div class="payment-info__field">
+				<div class="payment-info__row payment-info__row_mod">
+					Адрес
+				</div>
+				<div class="input__field">
+					<input class="input" type="text">
+				</div>
+			</div>
+			<div class="payment-info__field">
+				<div class="payment-info__row payment-info__row_mod">
+					Город
+				</div>
+				<div class="input__field">
+					<input class="input" type="text">
+				</div>
+			</div>
+			<div class="payment-info__field">
+				<div class="payment-info__row payment-info__row_mod">
+					Страна
+				</div>
+				<div class="input__field input__select">
+					<input class="input" type="text">
+				</div>
+			</div>
+			<div class="payment-info__field">
+				<div class="payment-info__row payment-info__row_mod">
+					Штат/Провинция
+				</div>
+				<div class="input__field">
+					<input class="input" type="text">
+				</div>
+			</div>
+			<div class="payment-info__field">
+				<div class="payment-info__row payment-info__row_mod">
+					Индекс
+				</div>
+				<div class="input__field">
+					<input class="input" type="text">
+				</div>
+			</div>
+			<div class="payment-info__field">
+				<div class="payment-info__row payment-info__row_mod">
+					Email
+				</div>
+				<div class="input__field">
+					<input class="input" type="text">
+				</div>
+			</div>
+			<div class="payment-info__field">
+				<div class="payment-info__row payment-info__row_mod">
+					Телефон
+				</div>
+				<div class="input__field">
+					<input class="input" type="text">
+				</div>
+			</div>
+			<p class="text__info">Передача данных шифруется высоконадежным 256-битным алгоритмом и осуществляется посредством SSL протокола</p>
+			<a class="btn" href="#">Оплатить</a>
+		</div>
+	</div>
 </div>
-<!-- END out-->
-
+<!-- END .container -->
+<!-- BEGIN .footer -->
+<footer class="footer">
+	<p>© 2013–2014 
+		<a href="#">IPSP.com</a>
+	</p>
+</footer>
+<!-- END .footer -->
 </body>
 </html>

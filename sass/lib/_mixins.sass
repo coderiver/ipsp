@@ -1,5 +1,5 @@
 // responsive example, edit or remove
-$breaksmall: 500px
+$breaksmall: 746px
 
 $breaklarge: 1180px
 
@@ -47,6 +47,8 @@ $breaklarge: 1180px
 =gh($color1, $color2)
 	+background-image(linear-gradient(left, $color1, $color2))
 
+=gbr($color1, $color2)
+	+background-image(linear-gradient(to bottom left, $color1, $color2))
 //asdfast font-family
 =font($alias, $name)
 	@font-face
