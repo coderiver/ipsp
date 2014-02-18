@@ -144,18 +144,59 @@ body
 	float: left
 	width: 500px
 	z-index: 2 
-	&:before
+	.cards__item
 		position: absolute
 		content: ''
 		top: 50%
-		left: 245px
 		margin-top: -17px 
-		+s(mc1)
+		display: none
+		&.act
+			display: block !important
+	.mastercard
+		left: 245px
+		+s(mc1) 
+	.visa
+		left: 203px
+		+s(visa1)
+	.off
+		display: none
 .input__field
+	position: relative
 	margin: 10px 0
 	width: 300px
 	height: 32px
 	display: inline-block
+	.error__inp
+		position: absolute
+		left: -27px
+		bottom: -31px
+		padding-left: 10px
+		width: 355px
+		height: 35px
+		color: #fff 
+		line-height: 33px
+		z-index: 2 
+		border: solid 1px #fff 
+		background: #ff4444
+		transition: all 0.3s linear 0s
+		display: none
+		+box
+.input__code
+	.error__code_cvv2
+		position: absolute
+		left: -1px
+		bottom: -31px
+		padding: 0 10px
+		height: 35px
+		width: 107px
+		color: #fff 
+		line-height: 33px
+		z-index: 2
+		border: solid 1px #fff
+		transition: all 0.3s linear 0s
+		background: #ff4444
+		display: none
+		+box
 .input
 	padding: 0 8px 
 	width: 100%
@@ -163,6 +204,12 @@ body
 	font-weight: 400 
 	border: 1px solid #cccfd5 
 	+box
+.input__up
+	text-transform: uppercase
+.error
+	border: solid 1px #F44
+	background: #FFDFDF
+	transition: all 0.3s linear 0s
 .payment__select
 	height: 72px
 	+box

@@ -9,6 +9,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,700,900,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 	<script src="js/jquery.js"></script>
+	<script src="js/jquery.validate.js"></script>
 	<script src="js/common.js"></script>
 </head>
 <body class="body">
@@ -16,10 +17,13 @@
 	<div class="wrapper">
 		<div class="payment__card">
 			<div class="payment__input payment__input_mod">
-				<h5 class="h5">Номер карты</h5>
-				<div class="input__field">
-					<input class="input" type="text"></input>	
-				</div>
+				<form class="payment__form" method="post" action="/" name="payment__form">
+					<h5 class="h5">Номер карты</h5>
+					<div class="input__field">
+						<input class="input" id="card_number" type="text" value="" minlength="16" maxlength="18" name="card_number"></input>
+						<label class="error error__inp" for="card_number"></label>	
+					</div>
+				</form>
 				<div class="payment__select">
 					<div class="payment__left">
 						<h5 class="h5">Срок действия</h5>
@@ -60,15 +64,18 @@
 						</div>
 					</div>
 					<div class="payment__right">
-						<h5 class="h5">Код CVV2/CVC2</h5>
-						<div class="input__code">
-							<input class="input" type="text"></input>	
-						</div>
+						<form class="payment__form1" method="post" action="/" name="payment__form1">
+							<h5 class="h5">Код CVV2/CVC2</h5>
+							<div class="input__code">
+								<input class="input" value="" minlength="3" maxlength="4" name="code_cvv2" onkeyup="return proverka_numbers(this);"></input>	
+							<label class="error error__code_cvv2" for="code_cvv2"></label>	
+							</div>
+						</form>
 					</div>
 				</div>
 				<h5 class="h5">Владелец карты</h5>
 				<div class="input__field">
-					<input class="input" type="text"></input>	
+					<input class="input input__up" type="text" onkeyup="return proverka(this);"></input>	
 				</div>
 				<h5 class="h5 input__field_text">Латинскими буквами как указано на карте</h5>
 			</div>

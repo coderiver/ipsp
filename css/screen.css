@@ -83,11 +83,22 @@ body { font-family: "Roboto", sans-serif; font-size: 14px; font-weight: 500; bac
 .option__item .pci { background: url('../img/icons-sc9aa00ebc3.png') 0 -972px no-repeat; width: 72px; height: 42px; }
 
 .payment__input { position: relative; float: left; width: 500px; z-index: 2; }
-.payment__input:before { position: absolute; content: ""; top: 50%; left: 245px; margin-top: -17px; background: url('../img/icons-sc9aa00ebc3.png') 0 -1173px no-repeat; width: 56px; height: 34px; }
+.payment__input .cards__item { position: absolute; content: ""; top: 50%; margin-top: -17px; display: none; }
+.payment__input .cards__item.act { display: block !important; }
+.payment__input .mastercard { left: 245px; background: url('../img/icons-sc9aa00ebc3.png') 0 -1173px no-repeat; width: 56px; height: 34px; }
+.payment__input .visa { left: 203px; background: url('../img/icons-sc9aa00ebc3.png') 0 -1217px no-repeat; width: 97px; height: 30px; }
+.payment__input .off { display: none; }
 
-.input__field { margin: 10px 0; width: 300px; height: 32px; display: inline-block; }
+.input__field { position: relative; margin: 10px 0; width: 300px; height: 32px; display: inline-block; }
+.input__field .error__inp { position: absolute; left: -27px; bottom: -31px; padding-left: 10px; width: 355px; height: 35px; color: white; line-height: 33px; z-index: 2; border: solid 1px white; background: #ff4444; transition: all 0.3s linear 0s; display: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.input__code .error__code_cvv2 { position: absolute; left: -1px; bottom: -31px; padding: 0 10px; height: 35px; width: 107px; color: white; line-height: 33px; z-index: 2; border: solid 1px white; transition: all 0.3s linear 0s; background: #ff4444; display: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 .input { padding: 0 8px; width: 100%; height: 34px; font-weight: 400; border: 1px solid #cccfd5; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.input__up { text-transform: uppercase; }
+
+.error { border: solid 1px #ff4444; background: #ffdfdf; transition: all 0.3s linear 0s; }
 
 .payment__select { height: 72px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .payment__select .input__field { float: left; margin-right: 8px; width: 51px; }
