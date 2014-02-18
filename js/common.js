@@ -33,63 +33,21 @@ $(document).ready(function() {
 			event.stopPropagation();
 		});
 
-	// function choose() {
-	// 	var number = $(".js-choose");
-	// 	number.each(function(){
-	// 		var max_number = +($(this).attr("data-max-number"));
-	// 		var input = $(this).find("input");
-	// 		var plus = $(this).find(".js-plus");
-	// 		var minus = $(this).find(".js-minus");
-	// 		plus.bind("click", function(){
-	// 			var val = +(input.val());
-	// 			if (val >= max_number) {
-	// 					return false
-	// 			}
-	// 			else {
-	// 				val += 1;
-	// 				input.val(val);
-	// 			}
-	// 		});
-	// 		minus.bind("click", function(){
-	// 			var val = +(input.val());
-	// 			if (val > 1) {
-	// 					val -= 1;
-	// 					input.val(val);
-	// 			}
-	// 			else {
-	// 						return false;
-	// 			}
-	// 		});
-	// 	});
-	// }
-	// choose(); 
-
-	// $("#myForm").validate({
- //    rules: {
- //      login: {
- //        required: true,
- //        rangelength: [16, 18]
- //      },
- //    },
- //    messages: {
- //      login: {
- //        rangelength: "Длина логина должна быть от {16} до {18} знаков"
- //      }
- //    }
- //  });
 
 						   
 	$.validator.addMethod("validcb1", function(value){
 		if ($("input:checked").length > 0) return true
 		else return false;
 	},"");
+
+	$("#card_number").mask("9999 9999 9999 9999");
 	
 	$("fieldset input").click(function(){$("fieldset label.error").remove()});
 	
 	$(".payment__form").validate({
 		rules: {
 			card_number: {
-				rangelength: [16, 18]
+				rangelength: [1, 21]
 			}
 		},
 		messages:{
@@ -110,7 +68,7 @@ $(document).ready(function() {
 		},
 		messages:{
 			code_cvv2:{
-				minlength: "Min 3 symbol"
+				minlength: "Min 3 symbols"
 			}
 		},
 		errorPlacement: function(error, element) {
@@ -118,6 +76,7 @@ $(document).ready(function() {
 		}	
 	});
 });
+
 function proverka_numbers(input) { 
     var value = input.value; 
     var rep = /[-\.;":'a-zA-Zа-яА-Я]/; 
