@@ -307,7 +307,7 @@ body
 	display: inline-block
 	.input
 		margin-top: 10px
-	&:before
+	.payment__icon_info
 		position: absolute
 		content: ''
 		bottom: 6px
@@ -324,26 +324,13 @@ body
 .input__select
 	position: relative
 	cursor: pointer
-	&:before
-		position: absolute
-		content: ""
-		top: 9px
-		right: 10px
-		width: 0px
-		height: 0px
-		border-style: solid
-		border-width: 0 3.5px 4px 3.5px
-		border-color: transparent transparent #4e4e4e transparent
-	&:after
-		position: absolute
-		content: ""
-		bottom: 9px
-		right: 10px
-		width: 0px
-		height: 0px
-		border-style: solid
-		border-width: 4px 3.5px 0 3.5px
-		border-color: #4e4e4e transparent transparent transparent
+	.select
+		width: 100%
+	.select__text
+		width: 100%
+.payment-info__row_pad
+	vertical-align: inherit 
+	padding-top: 20px
 .text__info
 	position: relative
 	margin: 30px 0
@@ -455,3 +442,5 @@ body
 		display: block
 	.footer
 		margin-top: 22px
+	.error__inp
+		font-size: 14px
