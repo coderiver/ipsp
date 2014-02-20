@@ -112,7 +112,7 @@ body
 		top: 22px
 		left: 207px
 		z-index: -2
-		+s(cart2)
+		+s(basiccopy2)
 .option-paying
 	float: right
 	margin-top: -8px
@@ -201,11 +201,11 @@ body
 	padding: 0 8px 
 	width: 100%
 	height: 34px
-	font-weight: 400 
+	font-weight: 400 !important
+	font-size: 16px !important
+	color: #373737 !important 
 	border: 1px solid #cccfd5 
 	+box
-	&#card_number
-		font-size: 23px 
 .input__up
 	text-transform: uppercase
 .error
@@ -277,28 +277,77 @@ body
 		height: 20px
 		line-height: 20px
 		&:hover
-			transition: all 0.1s linear 0.1s
+			+transition(0.1s)
 			background: #D8EAF2 
-// .choose
-// 	position: relative
-// 	height: 34px
-// 	width: 51px
-// 	display: inline-block
-// .choose__plus, .choose__minus
-// 	position: absolute
-// 	right: 9px
-// 	width: 0
-// 	height: 0
-// 	border-style: solid
-// 	background: #FFF 
-// .choose__plus
-// 	top: 10px
-// 	border-width: 0 3.5px 4px 3.5px
-// 	border-color: transparent transparent #4e4e4e transparent
-// .choose__minus
-// 	bottom: 10px
-// 	border-width: 4px 3.5px 0 3.5px
-// 	border-color: #4e4e4e transparent transparent transparent
+.selectBox-dropdown 
+	position: relative
+	padding: 0 8px
+	min-width: 100%
+	height: 34px
+	line-height: 32px
+	text-decoration: none
+	text-align: left
+	vertical-align: middle
+	color: #000
+	border: 1px solid #cccfd5 
+	outline: none
+	background: #fff
+	display: inline-block
+	cursor: text
+	+box
+	&:before
+		position: absolute
+		content: ""
+		top: 9px
+		right: 10px
+		width: 0px
+		height: 0px
+		border-style: solid
+		border-width: 0 3.5px 4px 3.5px
+		border-color: transparent transparent #4e4e4e transparent
+	&:after
+		position: absolute
+		content: ""
+		bottom: 9px
+		right: 10px
+		width: 0px
+		height: 0px
+		border-style: solid
+		border-width: 4px 3.5px 0 3.5px
+		border-color: #4e4e4e transparent transparent transparent
+.selectBox-dropdown .selectBox-label 
+	font-size: 16px
+	font-weight: 400
+	color: #373737
+	display: inline-block
+	white-space: nowrap
+	overflow: hidden
+.selectBox-dropdown-menu 
+	position: absolute
+	margin-top: -53px !important
+	max-height: 270px !important
+	z-index: 99999
+	border: 1px solid #cccfd5  
+	background: #FFF
+	overflow: auto
+	-webkit-overflow-scrolling: touch
+.selectBox-options, .selectBox-options li, .selectBox-options li a 
+	list-style: none
+	display: block
+	cursor: default
+	padding: 0
+	margin: 0
+	+transition(0.2s)
+.selectBox-options li a
+	padding: 0 15px
+	font-size: 16px
+	font-weight: 400
+	color: #373737
+.selectBox-options li.selectBox-hover a
+	background: #D8EAF2  
+.selectBox-options li.selectBox-selected a
+	background: #D8EAF2  
+
 .payment__left
 	float: left
 .payment__right
@@ -365,14 +414,14 @@ body
 	text-decoration: none
 	text-transform: uppercase
 	display: inline-block
-	background: #29ae6b 
+	background: #4dc687 
 	+box-shadow(inset 0 -3px 0 #238955) 
-	+gbr(#29ae6b, #4dc687)
-	transition: all 0.3s linear 0s
+	// +gbr(#29ae6b, #4dc687)
+	+transition(0.6s)
 	&:hover
+		background: #29ae6b
 		+box-shadow(none) 
-		background: #29ae6b 
-		transition: all 0.3s linear 0s
+		+transition(0.6s)
 .footer
 	float: left
 	margin-top: 63px
