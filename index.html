@@ -90,7 +90,7 @@
 					<form class="payment__form1" method="post" action="/" name="payment__form1">
 						<h5 class="h5">Код CVV2/CVC2</h5>
 						<div class="input__code">
-							<input class="input" value="" minlength="3" maxlength="4" name="code_cvv2" onkeyup="return proverka_numbers(this);"></input>	
+							<input class="input input_onlynumber" value="" minlength="3" maxlength="4" name="code_cvv2"></input>	
 						<label class="error error__code_cvv2" for="code_cvv2"></label>	
 						</div>
 					</form>
@@ -99,7 +99,7 @@
 			</div>
 			<h5 class="h5">Владелец карты</h5>
 			<div class="input__field">
-				<input class="input input__up" type="text" onkeyup="return proverka(this);"></input>	
+				<input class="input input__up input_latin" type="text"></input>	
 			</div>
 			<h5 class="h5 input__field_text">Латинскими буквами как указано на карте</h5>
 			<ul class="cards">
@@ -123,7 +123,7 @@
 					Адрес
 				</div>
 				<div class="input__field">
-					<input class="input js-input" type="text" onkeyup="return proverka(this);">
+					<input class="input js-input input_latin" type="text">
 				</div>
 			</div>
 			<div class="payment-info__field">
@@ -131,7 +131,7 @@
 					Город
 				</div>
 				<div class="input__field">
-					<input class="input" type="text" onkeyup="return proverka(this);">
+					<input class="input input_latin" type="text">
 				</div>
 			</div>
 			<div class="payment-info__field">
@@ -156,7 +156,7 @@
 					Штат/Провинция
 				</div>
 				<div class="input__field">
-					<input class="input" type="text" onkeyup="return proverka(this);">
+					<input class="input input_latin" type="text" >
 				</div>
 			</div>
 			<div class="payment-info__field">
@@ -164,7 +164,7 @@
 					Индекс
 				</div>
 				<div class="input__field">
-					<input class="input" type="text" onkeyup="return proverka(this);">
+					<input class="input input_latin" type="text" >
 				</div>
 			</div>
 			<div class="payment-info__field">
@@ -172,7 +172,7 @@
 					Email
 				</div>
 				<div class="input__field">
-					<input class="input" type="text" onkeyup="return proverka(this);">
+					<input class="input input_latin" type="text" >
 				</div>
 			</div>
 			<div class="payment-info__field">
@@ -180,7 +180,7 @@
 					Телефон
 				</div>
 				<div class="input__field">
-					<input class="input" type="text" onkeyup="return proverka(this);">
+					<input class="input input_latin" type="text" >
 				</div>
 			</div>
 			<p class="text__info">Передача данных шифруется высоконадежным 256-битным алгоритмом и осуществляется посредством SSL протокола</p>

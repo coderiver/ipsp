@@ -43,16 +43,15 @@ $(document).ready(function() {
 	}); 
 
 
-						   
-	$.validator.addMethod("validcb1", function(value){
-		if ($("input:checked").length > 0) return true
-		else return false;
-	},"");
 
+	//masking card number
 	$("#card_number").mask("9999 9999 9999 9999");
 	
+
+	// removing error
 	$("fieldset input").click(function(){$("fieldset label.error").remove()});
 	
+	// validates with validate plugin
 	$(".payment__form").validate({
 		rules: {
 			card_number: {
@@ -84,24 +83,80 @@ $(document).ready(function() {
 			if (element.attr("name") == "code_cvv2") error.insertAfter($("input[name=code_cvv2]"));
 		}	
 	});
+
+
+
+
+	// validates - only numbers
+	$('.input_onlynumber').bind('keyup', function() { 
+		var value = $(this).val(); 
+	    var rep = /[-\.;":'a-zA-Zа-яА-Я]/; 
+	    if (rep.test(value)) { 
+	        value = value.replace(rep, ''); 
+	        $(this).val(value);
+	    } 
+	});
+	// validates - only latin letters
+	$('.input_latin').bind('keyup', function() { 
+		var value = $(this).val(); 
+		var rep = /[а-яА-Я]/; 
+	    if (rep.test(value)) { 
+	        value = value.replace(rep, ''); 
+	        $(this).val(value);
+	    } 
+	});
 });
 
-function proverka_numbers(input) { 
-    var value = input.value; 
-    var rep = /[-\.;":'a-zA-Zа-яА-Я]/; 
-    if (rep.test(value)) { 
-        value = value.replace(rep, ''); 
-        input.value = value; 
-    } 
-	}
 
-function proverka(input) { 
-    var value = input.value; 
-    var rep = /[а-яА-Я]/; 
-    if (rep.test(value)) { 
-        value = value.replace(rep, ''); 
-        input.value = value; 
-    } 
-	}
 
-(function(){$(function(){$(".demo .numbers li").wrapInner('<a href="#"></a>').click(function(e){e.preventDefault();return $("#card_number").val($(this).text()).trigger("input")});$(".vertical.maestro").hide().css({opacity:0});return $("#card_number").validateCreditCard(function(e){if(e.card_type==null){$(".cards li").removeClass("off act");$("#card_number").removeClass("valid");$(".vertical.maestro").slideUp({duration:200}).animate({opacity:0},{queue:!1,duration:200});return}$(".cards li").addClass("off");$(".cards ."+e.card_type.name).addClass("act");e.card_type.name==="maestro"?$(".vertical.maestro").slideDown({duration:200}).animate({opacity:1},{queue:!1}):$(".vertical.maestro").slideUp({duration:200}).animate({opacity:0},{queue:!1,duration:200});return e.length_valid&&e.luhn_valid?$("#card_number").addClass("valid"):$("#card_number").removeClass("valid")},{accept:["visa","visa_electron","mastercard","maestro","discover"]})})}).call(this);
+
+
+(function() {
+    $(function() {
+        $(".demo .numbers li").wrapInner('<a href="#"></a>').click(function(e) {
+            e.preventDefault();
+            return $("#card_number").val($(this).text()).trigger("input")
+        });
+        $(".vertical.maestro").hide().css({
+            opacity:0
+        });
+        return $("#card_number").validateCreditCard(function(e) {
+            if(e.card_type == null) {
+                $(".cards li").removeClass("off act");
+                $("#card_number").removeClass("valid");
+                $(".vertical.maestro").slideUp({
+                    duration:200
+                }).animate({
+                    opacity:0
+                }
+                , {
+                    queue: ! 1
+                    ,duration:200
+                });
+                return
+            }
+            $(".cards li").addClass("off");
+            $(".cards ." + e.card_type.name).addClass("act");
+            e.card_type.name === "maestro"?$(".vertical.maestro").slideDown({
+                duration:200
+            }).animate({
+                opacity:1
+            }
+            , {
+                queue: ! 1
+            }):$(".vertical.maestro").slideUp({
+                duration:200
+            }).animate({
+                opacity:0
+            }
+            , {
+                queue: ! 1
+                ,duration:200
+            });
+            return e.length_valid && e.luhn_valid?$("#card_number").addClass("valid"):$("#card_number").removeClass("valid")
+        }
+        , {
+            accept:["visa","visa_electron","mastercard","maestro","discover"]
+        })
+    })
+}).call(this);
