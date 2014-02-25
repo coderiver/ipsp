@@ -146,22 +146,8 @@ body
 	float: left
 	width: 500px
 	z-index: 2 
-	.cards__item
-		position: absolute
-		content: ''
-		top: 50%
-		margin-top: -17px 
-		display: none
-		&.act
-			display: block !important
-	.mastercard
-		left: 245px
-		+s(mc1) 
-	.visa
-		left: 203px
-		+s(visa1)
-	.off
-		display: none
+
+
 .input__field
 	position: relative
 	margin: 10px 0
@@ -497,3 +483,29 @@ body
 		margin-top: 22px
 	.error__inp
 		font-size: 14px
+
+
+.card
+	position: absolute
+	top: 50%
+	left: 0 
+	margin-top: -17px 
+	left: 150px 
+	width: 150px 
+	i
+		display: inline-block
+		position: absolute
+		right: 0
+		top: 0  
+	.mastercard
+		+s(mc1) 
+	.visa
+		+s(visa1)
+	.amex
+		+s(visa1)
+	.maestro
+		+s(visa1)
+	.visa_electron
+		+s(visa1)
+	.china_unionpay
+		+s(visa1)
