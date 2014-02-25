@@ -45,7 +45,7 @@ $(document).ready(function() {
 
 
 	//masking card number
-	//$("#card_number").mask("9999 9999 9999 9999");
+	$("#card_number").mask("?9999 9999 9999 9999");
 	
 
 	// removing error
