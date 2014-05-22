@@ -40,10 +40,111 @@
 // =book
 // 	font-family: "book",arial,sans-serif 
 	
-body
-	font-size: 12px 
-	font-family: Arial, sans-serif 
-	line-height: 1.4
-
+@font-face
+	font-family: 'HelveticaNeueCyr-UltraLight'
+	src: url('../fonts/helveticaneuecyr-ultralight-webfont.eot')
+	src: local('__'), url('../fonts/helveticaneuecyr-ultralight-webfont.woff') format('woff'), url('../fonts/helveticaneuecyr-ultralight-webfont.ttf') format('ttf')
+	font-weight: normal
+	font-style: normal
+=hul
+	font-family: 'HelveticaNeueCyr-UltraLight', Arial, sans-serif
 
 // common blocks
+.mob-body
+	font-size: 8px
+	background: url('../img/bg-img.png') no-repeat 0 0
+	background-size: cover 
+	+hul
+.mob
+	padding: 35px 0 12px 
+	margin: 0 auto
+	width: 292px
+	color: #FFF 
+	.h5
+		font-size: 12px
+		font-weight: normal
+		text-transform: none
+	.payment__card
+		padding: 10px 18px 10px 20px
+		width: 100%
+		height: auto
+		background: rgba(#fff, 0.8) 
+		+box
+		+clr
+		&:before
+			content: none
+	.payment__right
+		width: 64px
+		&:after
+			top: 29px
+			left: -50px
+			+s(mob-pic3)
+	.mob__title
+		font-size: 15px
+		font-weight: 400 
+		text-align: center
+	.mob__text
+		position: relative
+		margin-top: 20px
+		padding: 0 0 0 30px 
+		&:before
+			position: absolute
+			content: ""
+			top: 0
+			left: 0
+			+s(mob-pic1)
+	.payment__input  
+		width: 100%
+	.input__field
+		width: 100%
+	.input, .selectBox-dropdown
+		height: 37px
+		line-height: 37px
+		border: none 
+	.mob__list
+		margin: 12px 0 
+		font-size: 0
+	.mob__item 
+		margin-right: 5px
+		display: inline-block
+		+box-shadow(0 0 0 1px #df8876)
+		&.mob__item_1
+
+			+sr(visa)
+		&.mob__item_2
+
+			+sr(mc)
+		&.mob__item_3
+
+			+sr(vbv)
+		&.mob__item_4
+
+			+sr(mcsc)
+		&.mob__item_5
+
+			+sr(pci)
+	.text__info
+		color: #FFF 
+		font-size: 8px
+		text-transform: none
+		&:before
+			top: 0
+			+s(mob-pic2)
+	.btn
+		margin: 0 auto
+		font-size: 14px
+		height: 35px
+		width: 216px
+		line-height: 35px
+		text-transform: none
+		vertical-align: middle
+		border: 1px solid #fff
+		+box-shadow(none)
+		background: #FF5A00 
+		display: block 
+		&:hover
+			background: none
+	.mob__copy
+		margin-top: 30px
+		text-align: center
+		font-size: 8px

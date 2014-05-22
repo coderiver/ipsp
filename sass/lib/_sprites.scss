@@ -13,8 +13,18 @@ $icons: sprite-map("icons/*.png", $spacing: 10px);
 //shortcut
 @mixin s($sprite, $map: $icons){
 	background: sprite($map, $sprite) no-repeat;
-	//background-image: inline-image('icons/'+$sprite+'.png','image/png'); // to switches sprites to base64, elegant
+	// background-image: inline-image('icons/'+$sprite+'.png','image/png'); 
 	@include image-size(sprite-file($map, $sprite));
+}
+@mixin sr($sprite, $map: $icons){
+	// background: sprite($map, $sprite) no-repeat;
+	background-image: inline-image('icons/'+$sprite+'.png','image/png'); 
+	@include image-sizer(sprite-file($map, $sprite));
+}
+@mixin image-sizer($path){
+	width: image-width($path)/2;
+	height: image-height($path)/2;
+	@include background-size(image-width($path)/2, image-height($path)/2);
 }
 //only image, when dimensions are useless
 @mixin si($sprite, $map: $icons){
